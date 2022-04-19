@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --rich-black: #04080f;
+  --turquoise-green: #BBE1C3;
+  --thistle: #d4c1ec;
+  --p-purple: #624CAB;
+  --emerald: #00916e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: inside;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Red Hat Display", sans-serif;
+  background-color: var(--p-purple);
+}
+
+body {
+  display: grid;
+  grid-template-areas: "nav" "main" "aside" "footer"
+}
+
+a {
+  color: var(--emerald);
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+header {
+  grid-area: nav;
+  background-color: var(--rich-black);
+  color: var(--emerald);
+  margin-bottom: 1.4em;
+  padding: .5em 1em;
+}
+
+h1 {
+  letter-spacing: 7px;
+  word-spacing: 7px;
+  font-size: 2.8em;
+}
+
+main {
+  grid-area: main;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  width: 75%;
+  min-height: 10em;
+  border-radius: .7em;
+  margin: 1.4em .7em;
+  background: var(--thistle);
+  color: var(--rich-black);
+  box-shadow: 3px 3px 3px;
+}
+
+h2 {
+  text-shadow: #04080f;
+  background-color: var(--emerald);
+}
+
+h2, h3 {
+  border-bottom: .1em solid;
+  padding: .35em .7em;
+}
+
+p, ul {
+  padding: .7em 1.4em
+}
+
+ul {
+  line-height: 2em;
+}
+
+aside {
+  grid-area: aside;
+  display: grid;
+  place-items: center;
+  padding: .7em 1.4em;
+}
+
+.side-content {
+  background-color: var(--turquoise-green);
+  text-align: right;
+  border-radius: .7em;
+  padding: 1.4em 2.1em;
+  max-width: 20em;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--rich-black);
+  color: var(--turquoise-green);
+  text-align: center;
+  letter-spacing: 1px;
+  margin-top: 2.1em;
+  padding: 1.4em 0;
+}
+
+
+@media screen and (min-width: 40em) {
+  body {
+    display: grid;
+    grid-template-rows: 1fr 5fr 2fr;
+    grid-template-areas: "nav nav nav nav" "main main main aside" "footer footer footer footer";
+  }
+
+  .flex-item {
+    max-width: 25em;
+  }  
+}
